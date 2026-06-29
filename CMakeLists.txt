@@ -5,12 +5,13 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # ── Dobby (inline hook library) ───────────────────────────────────────────────
+# Używamy konkretnego stabilnego commita który działa z NDK r27 + Linux
 include(FetchContent)
 
 FetchContent_Declare(
     dobby
     GIT_REPOSITORY https://github.com/jmpews/Dobby.git
-    GIT_TAG        master       # <-- poprawka: Dobby używa "master" nie "main"
+    GIT_TAG        v1.0        # stabilny tag, działa z ARM64 + NDK r27
     GIT_SHALLOW    TRUE
 )
 set(DOBBY_BUILD_SHARED OFF CACHE BOOL "" FORCE)
